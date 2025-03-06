@@ -4,7 +4,7 @@ import Grid from "@mui/material/Grid2";
 import Button from "@mui/material/Button";
 import { Typography, TextField } from "@mui/material";
 import { useState, useEffect } from "react";
-
+import DataTable from "./component/DataTable";
 function App() {
   const [start, setStart] = useState(false);
   const [text, setText] = useState("");
@@ -83,6 +83,11 @@ function App() {
 
       <div>
         <h1>Lista de Palabras</h1>
+        <DataTable
+          listTitles={["Palabra", "Nota", "Incorrecta"]}
+          listKeys={["palabra", "nota", "incorrecta"]}
+          dataList={words.palabras}
+        />
         <ul>
           {words.palabras.map((word, index) => (
             <li key={index}>
